@@ -1,0 +1,25 @@
+ [
+{
+"mobilenumber":"9502491398",
+"productname":"Cotton Stretch Dark Grey Plain Narrow Fit Flat Front Casual Jeans",
+"secondproductname":"Cotton Black Printed Half Sleeve Crew Neck Casual T-Shirt",
+"thirdproductname":"100% Cotton Olive Dobby Full Sleeve Slim Fit Casual Shirt",
+"removeproducts": ["Cotton Stretch Dark Grey Plain Narrow Fit Flat Front Casual Jeans","100% Cotton Olive Dobby Full Sleeve Slim Fit Casual Shirt"],
+"productincrement":"Cotton Black Printed Half Sleeve Crew Neck Casual T-Shirt",
+"categoryoption":"T-SHIRTS",
+"secondcategoryoption":"SHIRTS"
+},
+
+{
+"mobilenumber":"9063611797",
+"productname":"Cotton Stretch Dark Grey Plain Narrow Fit Flat Front Casual Jeans",
+"secondproductname":"Cotton Stretch Narrow Fit Navy Casual Trouser",
+"thirdproductname":"Knitted Black Active Life Joggers",
+"removeproducts": ["Cotton Stretch Dark Grey Plain Narrow Fit Flat Front Casual Jeans","Knitted Black Active Life Joggers"],
+"categoryoption":"TROUSERS",
+"secondcategoryoption":"JOGGERS"
+}
+
+
+]
+

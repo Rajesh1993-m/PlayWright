@@ -1,0 +1,5 @@
+"DESCRIPTION","DURATION IN MS","NAME","PARENT SUITE","START TIME","STATUS","STOP TIME","SUB SUITE","SUITE","TEST CLASS","TEST METHOD"
+"","7593","practise test for ZARA COAT 3","","Sat May 10 19:19:51 IST 2025","passed","Sat May 10 19:19:58 IST 2025","","POClientApp.spec.js","",""
+"","14","@web practise test for ADIDAS ORIGINAL","","Sat May 10 19:15:30 IST 2025","failed","Sat May 10 19:15:30 IST 2025","","POClientApp.spec.js","",""
+"","15","@web practise test for ZARA COAT 3","","Sat May 10 19:15:32 IST 2025","failed","Sat May 10 19:15:32 IST 2025","","POClientApp.spec.js","",""
+"","9893","practise test for ADIDAS ORIGINAL","","Sat May 10 19:19:39 IST 2025","passed","Sat May 10 19:19:49 IST 2025","","POClientApp.spec.js","",""

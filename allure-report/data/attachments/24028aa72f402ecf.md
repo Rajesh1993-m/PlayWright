@@ -1,0 +1,124 @@
+# Test info
+
+- Name: practise test for ZARA COAT 3
+- Location: C:\Users\honeysys\OneDrive\Documents\PlayWright\tests\POClientApp.spec.js:13:1
+
+# Error details
+
+```
+Error: browserType.launch: Executable doesn't exist at C:\Users\honeysys\AppData\Local\ms-playwright\chromium-1169\chrome-win\chrome.exe
+╔═════════════════════════════════════════════════════════════════════════╗
+║ Looks like Playwright Test or Playwright was just installed or updated. ║
+║ Please run the following command to download new browsers:              ║
+║                                                                         ║
+║     npx playwright install                                              ║
+║                                                                         ║
+║ <3 Playwright Team                                                      ║
+╚═════════════════════════════════════════════════════════════════════════╝
+```
+
+# Test source
+
+```ts
+   1 | const{test,expect}= require('@playwright/test');
+   2 | //const{LoginPage} = require('../tests/NewPageObjects/LoginPage');
+   3 | //const{Dashboard}=require('../tests/NewPageObjects/Dashboard');
+   4 | //const{Checkout}=require('../tests/NewPageObjects/Checkout');
+   5 | //const{Placeorder}=require('../tests/NewPageObjects/Placeorder');
+   6 | //const{Thankyoupage}=require('../tests/NewPageObjects/Thankyoupage');
+   7 | const{ManagerPO}=require('../tests/NewPageObjects/ManagerPO');
+   8 | //first we are converting json -> String -> javascript
+   9 | const dataset=JSON.parse(JSON.stringify(require("../Utils/placeorderTestData.json")));
+   10 |
+   11 | for(const data of dataset)
+   12 | {
+>  13 | test(`practise test for ${data.ProductName}`,async({page})=>
+      | ^ Error: browserType.launch: Executable doesn't exist at C:\Users\honeysys\AppData\Local\ms-playwright\chromium-1169\chrome-win\chrome.exe
+   14 |   
+   15 | {
+   16 |   const managerpo=new ManagerPO(page);
+   17 | //const ProductName="ADIDAS ORIGINAL";
+   18 | //await page.goto("https://rahulshettyacademy.com/client");
+   19 | //const Username="rajesh.seleniumqa@gmail.com";
+   20 | //const Password="Rajesh@143";
+   21 | //const loginpage=new LoginPage(page);
+   22 | const loginpage=managerpo.getloginpage();
+   23 | await loginpage.goTo();
+   24 | //await loginpage.validlogin(dataset.Username,dataset.Password);
+   25 | await loginpage.validlogin(data.Username,data.Password);
+   26 |
+   27 | //await page.locator("#userEmail").type("rajesh.seleniumqa@gmail.com");
+   28 | //await page.locator("[id='userPassword']").type("Rajesh@143");
+   29 | //await page.locator("[id='login']").click();
+   30 |
+   31 | //const dashboard=new Dashboard(page);
+   32 | const dashboard=managerpo.getdashboard();
+   33 | //await dashboard.searchproduct(dataset.ProductName);
+   34 | await dashboard.searchproduct(data.ProductName);
+   35 | await dashboard.navigatetocartpage();
+   36 | /*
+   37 | const products=await page.locator(".card-body");
+   38 | await products.first().waitFor();
+   39 |  //console.log(await page.locator('.card-body b').nth(1).textContent());
+   40 |  const count=await products.count();
+   41 |  for(let i=0;i<count;i++)
+   42 |  {
+   43 | if(await products.nth(i).locator('b').textContent()===ProductName)
+   44 | {
+   45 |     await products.nth(i).locator("text= Add To Cart").click();
+   46 |     break;
+   47 |
+   48 | }
+   49 |
+   50 |  }
+   51 |  //cart header
+   52 |  await page.locator("button[routerlink='/dashboard/cart']").click();
+   53 |  */
+   54 | //const checkout=new Checkout(page);
+   55 | const checkout=managerpo.getcheckout();
+   56 | await checkout.productvisible();
+   57 | await checkout.checkoutpage();
+   58 |  //await expect(page.locator('h3').nth(1)).toBeVisible();
+   59 |  //checkout
+   60 |  //await page.locator("button[type='button']").nth(1).click();
+   61 |
+   62 |  //const countrycode="Ind";
+   63 |  //const countryname=" India";
+   64 | //const placeorder= new Placeorder(page);
+   65 |   const placeorder=managerpo.getplacetheorder();
+   66 |   await placeorder.selectcountry("Ind"," India");
+   67 |   await placeorder.placetheorder();
+   68 |   /*
+   69 |  await page.locator("input[placeholder='Select Country']").pressSequentially('Ind');
+   70 |  const dropdown=await page.locator('.ta-results');
+   71 |  await dropdown.first().waitFor();
+   72 | const dropdowncount=await dropdown.locator('button').count();
+   73 |  for(let i=0;i<dropdowncount;i++)
+   74 |  {
+   75 | const text=await dropdown.locator('button').nth(i).textContent();
+   76 | if(text==" India")
+   77 | {
+   78 |     await dropdown.locator('button').nth(i).click();
+   79 |   break;
+   80 | }
+   81 |
+   82 |  }
+   83 |
+   84 |  await page.locator("a[class='btnn action__submit ng-star-inserted']").click(); //placeorder
+   85 | */
+   86 | //const thankyoupage=new Thankyoupage(page);
+   87 | const thankyoupage=managerpo.getthankyou();
+   88 | await thankyoupage.thankyou(" Thankyou for the order. ");
+   89 | await thankyoupage.idorder();
+   90 |  //await expect(page.locator('.hero-primary')).toHaveText(" Thankyou for the order. ");
+   91 |  //const orderid=await page.locator('.em-spacer-1 .ng-star-inserted').textContent();
+   92 | // console.log(orderid);
+   93 |
+   94 |  //await page.pause();
+   95 |
+   96 |
+   97 |
+   98 |     
+   99 |    });
+  100 |   }
+```
