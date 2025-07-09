@@ -16,5 +16,6 @@ test('test', async ({ page }) => {
   await page.getByRole('textbox', { name: 'Enter Name' }).fill('rajes');
   await page.getByRole('textbox', { name: 'Enter Mobile Number' }).click();
   await page.getByRole('textbox', { name: 'Enter Mobile Number' }).fill('4567898765');
+  // --debug page hold excution after schenam 
   await page.pause();
 });
