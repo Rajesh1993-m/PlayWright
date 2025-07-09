@@ -17,6 +17,4 @@ test('test', async ({ page }) => {
   await page.getByRole('textbox', { name: 'Enter Mobile Number' }).click();
   await page.getByRole('textbox', { name: 'Enter Mobile Number' }).fill('4567898765');
   await page.pause();
-
-  
 });
